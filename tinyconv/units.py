@@ -36,6 +36,13 @@ UNITS = [
     Unit("g", "gram", "mass", 0.001),
     Unit("lb", "pound", "mass", 0.45359237),
     Unit("oz", "ounce", "mass", 0.028349523125),
+    # volume, base: litre
+    Unit("L", "litre", "volume", 1.0),
+    Unit("mL", "millilitre", "volume", 0.001),
+    Unit("m3", "cubic metre", "volume", 1000.0),
+    Unit("gal", "US gallon", "volume", 3.785411784),
+    Unit("cup", "US cup", "volume", 0.2365882365),
+    Unit("floz", "US fluid ounce", "volume", 0.0295735295625),
     # temperature, base: kelvin
     Unit("K", "kelvin", "temperature", 1.0),
     Unit("C", "degree Celsius", "temperature", 1.0, 273.15),

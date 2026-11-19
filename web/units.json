@@ -85,6 +85,48 @@
       "offset": 0.0
     },
     {
+      "symbol": "L",
+      "name": "litre",
+      "category": "volume",
+      "factor": 1.0,
+      "offset": 0.0
+    },
+    {
+      "symbol": "mL",
+      "name": "millilitre",
+      "category": "volume",
+      "factor": 0.001,
+      "offset": 0.0
+    },
+    {
+      "symbol": "m3",
+      "name": "cubic metre",
+      "category": "volume",
+      "factor": 1000.0,
+      "offset": 0.0
+    },
+    {
+      "symbol": "gal",
+      "name": "US gallon",
+      "category": "volume",
+      "factor": 3.785411784,
+      "offset": 0.0
+    },
+    {
+      "symbol": "cup",
+      "name": "US cup",
+      "category": "volume",
+      "factor": 0.2365882365,
+      "offset": 0.0
+    },
+    {
+      "symbol": "floz",
+      "name": "US fluid ounce",
+      "category": "volume",
+      "factor": 0.0295735295625,
+      "offset": 0.0
+    },
+    {
       "symbol": "K",
       "name": "kelvin",
       "category": "temperature",

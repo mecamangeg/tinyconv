@@ -21,6 +21,7 @@ The web page lives in `web/`. Serve that folder (`make serve`, then open http://
 |---|---|
 | length | m, km, cm, mm, in, ft, yd, mi |
 | mass | kg, g, lb, oz |
+| volume | L, mL, m3, gal, cup, floz |
 | temperature | K, C, F |
 
 Every unit maps to its category's base unit: `base = value * factor + offset`.

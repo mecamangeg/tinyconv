@@ -21,6 +21,16 @@ class KnownValues(unittest.TestCase):
         self.check(1, "lb", "g", 453.59237)
         self.check(16, "oz", "lb", 1)
 
+    def test_volume(self):
+        self.check(1, "m3", "L", 1000)
+        self.check(1, "L", "mL", 1000)
+        self.check(1, "gal", "L", 3.785411784)
+        self.check(1, "gal", "cup", 16)
+        self.check(1, "cup", "mL", 236.5882365)
+        self.check(1, "cup", "floz", 8)
+        self.check(1, "floz", "mL", 29.5735295625)
+        self.check(128, "floz", "gal", 1)
+
     def test_temperature(self):
         self.check(100, "C", "F", 212)
         self.check(-40, "F", "C", -40)
