@@ -50,7 +50,8 @@ async function start() {
   const cats = [...new Set(UNITS.map((u) => u.category))];
   $("category").replaceChildren(...cats.map((c) => new Option(c, c)));
   $("category").addEventListener("change", pickCategory);
-  for (const id of ["value", "src", "dst"]) $(id).addEventListener("input", show);
+  $("value").addEventListener("input", show);
+  for (const id of ["src", "dst"]) $(id).addEventListener("change", show);
   $("swap").addEventListener("click", () => {
     const s = $("src").value;
     $("src").value = $("dst").value;
