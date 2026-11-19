@@ -30,6 +30,29 @@ class Cli(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertIn("unknown unit: furlong", err)
 
+    def test_names_case_insensitive(self):
+        code, out, _ = run("5", "Kilometre", "MILE")
+        self.assertEqual(code, 0)
+        self.assertEqual(out.strip(), "5 km = 3.10686 mi")
+
+    def test_symbols_stay_case_sensitive(self):
+        code, out, _ = run("100", "C", "F")
+        self.assertEqual((code, out.strip()), (0, "100 C = 212 F"))
+
+    def test_unknown_unit_suggests(self):
+        code, _, err = run("1", "kms", "m")
+        self.assertEqual(code, 2)
+        self.assertIn("unknown unit: kms (did you mean km", err)
+
+    def test_list_groups_by_category(self):
+        code, out, _ = run("--list")
+        self.assertEqual(code, 0)
+        for cat in units.categories():
+            self.assertIn(f"{cat}:", out)
+        for u in units.UNITS:
+            self.assertIn(u.name, out)
+        self.assertLess(out.index("length:"), out.index("mass:"))
+
     def test_missing_arguments(self):
         with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
             main(["5", "km"])

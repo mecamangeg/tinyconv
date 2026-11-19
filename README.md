@@ -11,7 +11,13 @@ background-agent features. It holds no personal or sensitive data.
 ```sh
 python3 -m tinyconv 5 km mi        # 5 km = 3.10686 mi
 python3 -m tinyconv 100 C F        # 100 C = 212 F
+python3 -m tinyconv 5 kilometre mile   # unit names work too, in any case
+python3 -m tinyconv --list         # list the units, grouped by category
 ```
+
+Units can be given as a symbol (case-sensitive, e.g. `km`, `C`) or as a name (case-insensitive,
+e.g. `Kilometre`). An unknown unit exits with code 2 and suggests close matches:
+`tinyconv: unknown unit: kms (did you mean km?)`.
 
 The web page lives in `web/`. Serve that folder (`make serve`, then open http://localhost:8080).
 
