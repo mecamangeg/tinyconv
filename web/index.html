@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tinyconv</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>tinyconv</h1>
+    <p class="lede">Convert a value between units. The table comes from <code>units.json</code>, written by the Python package.</p>
+
+    <form id="conv" autocomplete="off">
+      <label>Category
+        <select id="category"></select>
+      </label>
+      <label>Value
+        <input id="value" type="number" step="any" value="1" inputmode="decimal">
+      </label>
+      <div class="pair">
+        <label>From
+          <select id="src"></select>
+        </label>
+        <button type="button" id="swap" aria-label="Swap the two units">⇄</button>
+        <label>To
+          <select id="dst"></select>
+        </label>
+      </div>
+    </form>
+
+    <output id="result" for="value src dst" aria-live="polite"></output>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
